@@ -6,7 +6,7 @@ import styles from '../styles/ProfilePage.module.css';
 function ProfilePage() {
   const userData = JSON.parse(localStorage.getItem("userData"));
   const [data, setData] = useState({
-    firstname: userData.firstname,
+    fristname: userData.fristname,
     lastname: userData.lastname,
     age: userData.age,
   });
@@ -30,7 +30,7 @@ function ProfilePage() {
     } else if (data.age > 100) {
       validationErrors.age = "Your age cannot be more than 100.";
     }
-    if (!validateRegex.test(data.firstname)) {
+    if (!validateRegex.test(data.fristname)) {
       validationErrors.firstname = "Your first name is invalid.";
     }
     if (!validateRegex.test(data.lastname)) {
@@ -56,7 +56,7 @@ function ProfilePage() {
           type="text"
           placeholder="First Name"
           name="firstname"
-          value={data.firstname}
+          value={data.fristname}
           onChange={changeHandler}
         />
         {errors.firstname && <p className={styles.inputError}>{errors.firstname}</p>}
